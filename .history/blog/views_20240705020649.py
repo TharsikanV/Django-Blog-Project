@@ -10,7 +10,7 @@ def detail(request,post_id):
     return HttpResponse(f"You are viewing post detail page. And ID is {post_id}")
 
 def old_url_redirect(request):
-    return redirect(reverse('blog:new_page_url'))
+    return redirect(reverse('blog'))
 
 def new_url_view(request):
     return HttpResponse("This is the new URL")
