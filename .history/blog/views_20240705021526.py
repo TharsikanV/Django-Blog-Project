@@ -4,10 +4,10 @@ from django.urls import reverse #url name ah vachchu redirect panna use aakum
 
 # Create your views here.
 def index(request):
-    return render(request,'blog/index.html')
+    return render("Hello world, You are at blog's index")
 
 def detail(request,post_id):
-    return render(request,'blog/detail.html')
+    return HttpResponse(f"You are viewing post detail page. And ID is {post_id}")
 
 def old_url_redirect(request):
     return redirect(reverse('blog:new_page_url'))
