@@ -6,4 +6,4 @@ def index(request):
     return HttpResponse("Hello world, You are at blog's index")
 
 def detail(request):
-    return HttpResponse("You are viewing post detail page")
+    return HttpResponse("")
