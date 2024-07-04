@@ -9,7 +9,4 @@ def detail(request,post_id):
     return HttpResponse(f"You are viewing post detail page. And ID is {post_id}")
 
 def old_url_redirect(request):
-    return redirect("new_url")
-
-def new_url_view(request):
-    return HttpResponse("This is the new URL")
+    return redirect("new")

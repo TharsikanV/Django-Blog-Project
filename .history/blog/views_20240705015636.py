@@ -12,4 +12,4 @@ def old_url_redirect(request):
     return redirect("new_url")
 
 def new_url_view(request):
-    return HttpResponse("This is the new URL")
+    
