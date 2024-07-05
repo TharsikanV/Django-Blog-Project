@@ -12,7 +12,7 @@ def index(request):
         {'title':'Post 4','content':'Content of Post 4'},
     ]
 
-    return render(request,'blog/index.html',{'blog_title':blog_title,'posts':posts})#variable interpolation
+    return render(request,'blog/index.html',{'blog_title':blog_title,})#variable interpolation
 
 def detail(request,post_id):
     return render(request,'blog/detail.html')
