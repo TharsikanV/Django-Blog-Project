@@ -4,8 +4,8 @@ from django.urls import reverse #url name ah vachchu redirect panna use aakum
 
 # Create your views here.
 def index(request):
-    blog_title="Latest Posts"
-    return render(request,'blog/index.html',{'blog_title':blog_title})#variable interpolation
+    blog_title="Latest posts"
+    return render(request,'blog/index.html',{blo})
 
 def detail(request,post_id):
     return render(request,'blog/detail.html')
