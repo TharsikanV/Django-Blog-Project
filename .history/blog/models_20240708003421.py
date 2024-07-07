@@ -6,5 +6,4 @@ class Post(models.Model):
     content=models.TextField()
     img_url=models.URLField(blank=True)#nullable coloumn aaka maaththa
 
-    def __str__(self):
-        return self.title
+    def __
