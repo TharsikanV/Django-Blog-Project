@@ -16,9 +16,9 @@ def index(request):
     return render(request,'blog/index.html',{'blog_title':blog_title,'posts':posts})#variable interpolation
 
 def detail(request,post_id):
-    post=next((item for item in posts if item['id']==int(post_id)),None)
-    # logger=logging.getLogger("TESTING")
-    # logger.debug(f'post variable is {post}')#it will show the string in terminal
+    post=next((item for item in posts if item['id']==post_id),None)
+    logger=logging.getLogger("TESTING")
+    logger
     return render(request,'blog/detail.html',{'post':post})
 
 def old_url_redirect(request):
