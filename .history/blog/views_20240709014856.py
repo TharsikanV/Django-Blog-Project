@@ -15,9 +15,7 @@ from .models import Post
 #     ]
 def index(request):
     blog_title="Latest Posts"
-    
-    #getting data from post model 
-    posts=Post.objects.all()
+    posts=Post.objects.all()#
     return render(request,'blog/index.html',{'blog_title':blog_title,'posts':posts})#variable interpolation
 
 def detail(request,post_id):

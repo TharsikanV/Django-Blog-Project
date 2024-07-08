@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.urls import reverse #url name ah vachchu redirect panna use aakum
 import logging
-from .models import Post
+import 
 
 # Create your views here.
 # static demo data
@@ -15,9 +15,6 @@ from .models import Post
 #     ]
 def index(request):
     blog_title="Latest Posts"
-    
-    #getting data from post model 
-    posts=Post.objects.all()
     return render(request,'blog/index.html',{'blog_title':blog_title,'posts':posts})#variable interpolation
 
 def detail(request,post_id):
