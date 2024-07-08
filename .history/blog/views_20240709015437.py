@@ -24,8 +24,7 @@ def detail(request,post_id):
     # static data
     # post=next((item for item in posts if item['id']==int(post_id)),None)
 
-    # getting data from model by post id
-    post=Post.objects.get(pk=post_id)
+    # getting data from model by  
 
     # logger=logging.getLogger("TESTING")
     # logger.debug(f'post variable is {post}')#it will show the string in terminal
