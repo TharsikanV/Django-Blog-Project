@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.urls import reverse #url name ah vachchu redirect panna use aakum
 import logging
 from .models import Post
-from django.http import Http404
+from django.http import Ht
 
 # Create your views here.
 # static demo data

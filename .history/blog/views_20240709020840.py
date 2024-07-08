@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.urls import reverse #url name ah vachchu redirect panna use aakum
 import logging
 from .models import Post
-from django.http import Http404
 
 # Create your views here.
 # static demo data
@@ -30,7 +29,7 @@ def detail(request,post_id):
         post=Post.objects.get(pk=post_id)#pk is the primary key
     
     except Post.DoesNotExist:
-        raise Http404("Post Does not Exist!")
+        raise Htt
 
     # logger=logging.getLogger("TESTING")
     # logger.debug(f'post variable is {post}')#it will show the string in terminal
