@@ -11,8 +11,7 @@ class Post(models.Model):
     slug=models.SlugField(unique=True)
 
     def save(self,*args,**kwargs):
-        self.slug=slugify(self.title)
-        super().save(*args,**kwargs)
+        self.slu=slugify(se)
 
     def __str__(self):
         return self.title

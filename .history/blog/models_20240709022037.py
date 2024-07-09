@@ -1,6 +1,4 @@
-from typing import Iterable
 from django.db import models
-from django.utils.text import slugify
 
 # Create your models here.
 class Post(models.Model):
@@ -10,9 +8,7 @@ class Post(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     slug=models.SlugField(unique=True)
 
-    def save(self,*args,**kwargs):
-        self.slug=slugify(self.title)
-        super().save(*args,**kwargs)
+    def sv
 
     def __str__(self):
         return self.title

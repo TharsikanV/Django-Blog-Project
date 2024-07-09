@@ -11,7 +11,7 @@ class Command(BaseCommand):
 
     def handle(self, *args: Any, **options: Any):
         # Deleting existing data
-        Post.objects.all().delete()
+        Post.
 
         titles = [
             "The Future of AI",
