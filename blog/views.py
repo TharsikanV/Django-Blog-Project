@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.urls import reverse #url name ah vachchu redirect panna use aakum
 import logging
-from .models import Post
+from .models import Post,AboutUs
 from django.http import Http404
 from django.core.paginator import Paginator
 from .forms import ContactForm
@@ -70,3 +70,7 @@ def contact_view(request):
             logger.debug('Form validation failure')
         return render(request,'blog/contact.html',{'form':form,'name':name,'email':email,'message':message})
     return render(request,'blog/contact.html')
+
+def about_view(request):
+     about_content=AboutUs.objects.first().content   #first rowla content value ah edukkum
+     return render(request,'blog/about.html',{'about_content':about_content})

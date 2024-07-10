@@ -21,6 +21,6 @@ handler404='myapp.views.custom_page_not_found'
 # handler404 is important
 
 urlpatterns = [
-    path("blog/",include("blog.urls")),
+    path("",include("blog.urls")),
     path('admin/', admin.site.urls),
 ]
