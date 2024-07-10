@@ -29,12 +29,14 @@ def detail(request,slug):
         # getting data from model by post id
         # post=Post.objects.get(pk=post_id)#pk is the primary key
         post=Post.objects.get(slug=slug)
+        related_posts=Post.objects.filter(category=post.category).exclude(pk=post.id)
+
     except Post.DoesNotExist:
         raise Http404("Post Does not Exist!")
 
     # logger=logging.getLogger("TESTING")
     # logger.debug(f'post variable is {post}')#it will show the string in terminal
-    return render(request,'blog/detail.html',{'post':post})
+    return render(request,'blog/detail.html',{'post':post,'related_posts':related_posts})
 
 def old_url_redirect(request):
     return redirect(reverse('blog:new_page_url'))
