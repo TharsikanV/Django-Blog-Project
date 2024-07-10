@@ -4,6 +4,7 @@ from django.urls import reverse #url name ah vachchu redirect panna use aakum
 import logging
 from .models import Post
 from django.http import Http404
+from django.core.paginator import Paginator
 
 # Create your views here.
 # static demo data
@@ -18,8 +19,14 @@ def index(request):
     blog_title="Latest Posts"
     
     #getting data from post model 
-    posts=Post.objects.all()
-    return render(request,'blog/index.html',{'blog_title':blog_title,'posts':posts})#variable interpolation
+    all_posts=Post.objects.all()
+
+    # paginate
+    paginator=Paginator(all_posts,5)#kidaikkira object ah ipd vankidan
+    page_number=request.GET.get('page')
+    page_obj=paginator.get_page(page_number)
+
+    return render(request,'blog/index.html',{'blog_title':blog_title,'page_obj':page_obj})#variable interpolation
 
 def detail(request,slug):
     # static data
